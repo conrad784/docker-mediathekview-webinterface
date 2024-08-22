@@ -21,7 +21,7 @@ ENV LANG en_US.UTF-8
 # Runtime deps
 RUN apt-get install -y \
         wget \
-	procps \
+        procps \
         vlc \
         flvstreamer \
         ffmpeg \
