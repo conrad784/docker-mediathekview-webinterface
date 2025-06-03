@@ -1,9 +1,9 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:debian-10-v4
+FROM jlesage/baseimage-gui:debian-12-v4
 
 ENV USER_ID=0 GROUP_ID=0 TERM=xterm
 
-ENV MEDIATHEK_VERSION=14.1.0
+ENV MEDIATHEK_VERSION=14.2.0
 
 # Refresh apt cache
 RUN apt-get update \
@@ -43,7 +43,7 @@ LABEL \
       org.label-schema.name="mediathekview" \
       org.label-schema.description="Docker container for Mediathekview" \
       org.label-schema.version=$MEDIATHEK_VERSION \
-      org.label-schema.vcs-url="https://github.com/conrad784/docker-mediathekview-webinterface" \
+      org.label-schema.vcs-url="https://github.com/Minegamer06/docker-mediathekview-webinterface" \
       org.label-schema.schema-version="1.0"
 
 # Define software download URLs.
