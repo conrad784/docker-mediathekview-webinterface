@@ -3,7 +3,7 @@ FROM jlesage/baseimage-gui:debian-12-v4
 
 ENV USER_ID=0 GROUP_ID=0 TERM=xterm
 
-ENV MEDIATHEK_VERSION=14.4.0
+ENV MEDIATHEK_VERSION=14.4.1
 
 # Refresh apt cache
 RUN apt-get update \
