@@ -6,8 +6,7 @@ ENV USER_ID=0 GROUP_ID=0 TERM=xterm
 ENV MEDIATHEK_VERSION=14.5.0
 
 # Refresh apt cache
-RUN apt-get update \
-    && apt-get upgrade -y
+RUN apt-get update
 
 # Locale needed for storing files with umlaut
 RUN apt-get install -y apt-utils locales \
