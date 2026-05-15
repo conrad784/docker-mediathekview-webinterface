@@ -3,7 +3,8 @@ FROM jlesage/baseimage-gui:debian-12-v4
 
 ENV USER_ID=0 \
     GROUP_ID=0 \
-    TERM=xterm
+    TERM=xterm \
+    DEBIAN_FRONTEND=noninteractive
 
 ARG MEDIATHEK_VERSION=14.5.0
 ENV MEDIATHEK_VERSION=${MEDIATHEK_VERSION}
@@ -12,15 +13,17 @@ ENV MEDIATHEK_VERSION=${MEDIATHEK_VERSION}
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         apt-utils \
+        ca-certificates \
+        fontconfig \
         locales \
         wget \
         procps \
         vlc \
         ffmpeg \
-        ca-certificates \
     && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
     && locale-gen \
-    && rm -rf /var/lib/apt/lists/*
+    && fc-cache -f -v \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LC_ALL=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
