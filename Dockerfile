@@ -20,11 +20,10 @@ ENV LANG en_US.UTF-8
 # Runtime deps
 RUN apt-get install -y \
         wget \
+	ca-certificates \
 	procps \
         vlc \
-        flvstreamer \
         ffmpeg \
-        --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Maximize only the main/initial window.
