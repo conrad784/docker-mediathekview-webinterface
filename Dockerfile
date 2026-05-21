@@ -7,7 +7,7 @@ ENV MEDIATHEK_VERSION=14.5.0
 
 # Refresh apt cache
 RUN apt-get update \
-    && apt-get upgrade -y
+    && apt-get upgrade -f -y
 
 # Locale needed for storing files with umlaut
 RUN apt-get install -y apt-utils locales \
