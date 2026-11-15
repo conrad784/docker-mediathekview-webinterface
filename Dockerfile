@@ -2,7 +2,7 @@
 FROM jlesage/baseimage-gui:debian-12-v4
 
 ENV USER_ID=0 GROUP_ID=0 TERM=xterm
-ENV MEDIATHEK_VERSION=14.5.0
+ENV MEDIATHEK_VERSION=15.0.0
 
 # Locale needed for storing files with umlaut.
 RUN \

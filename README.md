@@ -37,6 +37,10 @@ docker run -it -p 127.0.0.1:5800:5800 --rm \
     conrad784/mediathekview-webinterface:latest
 ```
 
+### Upgrading to MediathekView 15.0.0
+
+MediathekView 15.0.0 is not backward compatible with older MediathekView versions. Back up the `/config` volume before starting version 15.0.0, and do not reuse a configuration updated by version 15.0.0 with an older version.
+
 ## Developing
 Make your changes, then build new version:
 `docker build --rm -t mymediathek -f Dockerfile .`
