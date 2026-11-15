@@ -48,10 +48,11 @@ LABEL \
 
 # Define software download URLs.
 ARG MEDIATHEKVIEW_URL=https://download.mediathekview.de/stabil/MediathekView-$MEDIATHEK_VERSION-linux.tar.gz
+ARG MEDIATHEKVIEW_SHA512=1a5faf895d19018ae485606103a8c41ced7c0f7ab54240922eb340c9f057a35da2cd93c88428ffe59e2e43dbfabb998a8a11286cc5f4c88c6b24ee896e3f4efe
 
 # Download MediathekView.
-RUN mkdir -p /opt/MediathekView
 RUN wget -q "${MEDIATHEKVIEW_URL}" -O /tmp/MediathekView.tar.gz && \
+    printf '%s  %s\n' "${MEDIATHEKVIEW_SHA512}" /tmp/MediathekView.tar.gz | sha512sum --check --status && \
     tar xf /tmp/MediathekView.tar.gz -C /opt && \
     rm -f /tmp/MediathekView.tar.gz
 
